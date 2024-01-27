@@ -109,12 +109,12 @@ else:
                 "イベント:", options_event, key=line + "_event"
             )
 
-            options_event = ["", "file"]
-            selected_option_event = st.selectbox(
-                "シーン遷移:", options_event, key=line + "_scene"
+            options_scene = ["", "file"]
+            selected_option_scene = st.selectbox(
+                "シーン遷移:", options_scene, key=line + "_scene"
             )
 
-            labeled_text = f"{line},{selected_option_char},{selected_option_file},{selected_option_pos},{selected_option_bgm},{selected_option_back},{selected_option_event}"
+            labeled_text = f"{line},{selected_option_char},{selected_option_file},{selected_option_pos},{selected_option_bgm},{selected_option_back},{selected_option_event},{selected_option_scene}"
             st.session_state.labeled_lines.append(labeled_text)
 
     if st.button("ラベリング結果を表示", key="_button"):
