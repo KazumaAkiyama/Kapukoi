@@ -73,6 +73,7 @@ else:
 
             options_back = [
                 "",
+                "stop", 
                 "kyousitu_hiru",
                 "kyousitu_yuu",
                 "rouka_hiru",
@@ -109,12 +110,17 @@ else:
                 "イベント:", options_event, key=line + "_event"
             )
 
-            options_scene = ["", "file"]
-            selected_option_scene = st.selectbox(
-                "シーン遷移:", options_scene, key=line + "_scene"
+            options_scene1 = ["", "file"]
+            selected_option_scene1 = st.selectbox(
+                "シーン遷移1:", options_scene1, key=line + "_scene1"
             )
 
-            labeled_text = f"{line},{selected_option_char},{selected_option_file},{selected_option_pos},{selected_option_bgm},{selected_option_back},{selected_option_event},{selected_option_scene}"
+            options_scene2 = ["", "file"]
+            selected_option_scene2 = st.selectbox(
+                "シーン遷移2:", options_scene2, key=line + "_scene2"
+            )
+
+            labeled_text = f"{line},{selected_option_char},{selected_option_file},{selected_option_pos},{selected_option_bgm},{selected_option_back},{selected_option_event},{selected_option_scene1}{selected_option_scene2}"
             st.session_state.labeled_lines.append(labeled_text)
 
     if st.button("ラベリング結果を表示", key="_button"):
