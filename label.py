@@ -104,7 +104,7 @@ else:
             ]
             selected_option_back = st.selectbox("背景:", options_back, key=line + "_back")
 
-            options_event = ["", "select", "daialogue", "trigger"]
+            options_event = ["", "select", "daialogue_start", "attack_start", "attack_end", "trigger"]
             selected_option_event = st.selectbox(
                 "イベント:", options_event, key=line + "_event"
             )
