@@ -51,21 +51,21 @@ else:
             )
            
             selected_option_fileC = st.selectbox(
-                "ファイルタグ_C:", options_file, key=line + "_file"
+                "ファイルタグ_C:", options_file, key=line + "_fileC"
             )
 
             selected_option_charL = st.selectbox(
                 "キャラ_L:", options_char, key=line + "_charL"
             )
             selected_option_fileL = st.selectbox(
-                "ファイルタグ_L:", options_file, key=line + "_file"
+                "ファイルタグ_L:", options_file, key=line + "_fileL"
             )
 
             selected_option_charR = st.selectbox(
                 "キャラ_R:", options_char, key=line + "_charR"
             )
             selected_option_fileR = st.selectbox(
-                "ファイルタグ_R:", options_file, key=line + "_file"
+                "ファイルタグ_R:", options_file, key=line + "_fileR"
             )
 
             options_bgm = [
