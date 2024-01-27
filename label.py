@@ -28,9 +28,17 @@ else:
     for line in st.session_state.text_lines:
         if line:
             st.subheader(line)
-            options_char = ["", "syujinkou", "sei", "aki", "su", "hama", "seifes"]
-            selected_option_char = st.selectbox(
-                "キャラ:", options_char, key=line + "_char"
+            options_charC = ["", "syujinkou", "sei", "aki", "su", "hama", "seifes", "sei_out", "aki_out", "su_out", "hama_out", "seifes_out"]
+            selected_option_charC = st.selectbox(
+                "キャラ_C:", options_charC, key=line + "_charC"
+            )
+            options_charL = ["", "syujinkou", "sei", "aki", "su", "hama", "seifes", "sei_out", "aki_out", "su_out", "hama_out", "seifes_out"]
+            selected_option_charL = st.selectbox(
+                "キャラ_L:", options_charL, key=line + "_charL"
+            )
+            options_charR = ["", "syujinkou", "sei", "aki", "su", "hama", "seifes", "sei_out", "aki_out", "su_out", "hama_out", "seifes_out"]
+            selected_option_charR = st.selectbox(
+                "キャラ_R:", options_charR, key=line + "_charR"
             )
 
             options_file = [
@@ -53,9 +61,6 @@ else:
             selected_option_file = st.selectbox(
                 "ファイルタグ:", options_file, key=line + "_file"
             )
-
-            options_pos = ["", "c", "l", "r"]
-            selected_option_pos = st.selectbox("位置:", options_pos, key=line + "_pos")
 
             options_bgm = [
                 "",
@@ -104,6 +109,8 @@ else:
                 "stage_yoru",
                 "sheet",
                 "station",
+                "still_sei1",
+                "still_sei2"
             ]
             selected_option_back = st.selectbox("背景:", options_back, key=line + "_back")
 
@@ -122,7 +129,7 @@ else:
                 "シーン遷移2:", options_scene2, key=line + "_scene2"
             )
 
-            labeled_text = f"{line},{selected_option_char},{selected_option_file},{selected_option_pos},{selected_option_bgm},{selected_option_back},{selected_option_event},{selected_option_scene1}{selected_option_scene2}"
+            labeled_text = f"{line},{selected_option_charC},{selected_option_charL},{selected_option_charR},{selected_option_file},{selected_option_bgm},{selected_option_back},{selected_option_event},{selected_option_scene1}{selected_option_scene2}"
             st.session_state.labeled_lines.append(labeled_text)
 
     if st.button("ラベリング結果を表示", key="_button"):
