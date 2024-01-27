@@ -28,11 +28,11 @@ else:
     for line in st.session_state.text_lines:
         if line:
             st.subheader(line)
-            options_speaker = ["", "syujinkou", "セイ", "アキ", "スウ", "ハマ", "？？？"]
+            options_speaker = ["", "主人公", "セイ", "アキ", "スウ", "ハマ", "？？？"]
             selected_option_speaker = st.selectbox(
                 "スピーカー:", options_speaker, key=line + "_speaker"
             )
-            options_char = ["", "syujinkou", "sei", "aki", "su", "hama", "seifes", "sei_out", "aki_out", "su_out", "hama_out", "seifes_out"]
+            options_char = ["", "sei", "aki", "su", "hama", "seifes", "sei_out", "aki_out", "su_out", "hama_out", "seifes_out"]
             options_file = [
                 "",
                 "_a",
