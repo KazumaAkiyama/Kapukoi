@@ -117,7 +117,7 @@ else:
             labeled_text = f"{line},{selected_option_char},{selected_option_file},{selected_option_pos},{selected_option_bgm},{selected_option_back},{selected_option_event}"
             st.session_state.labeled_lines.append(labeled_text)
 
-    if st.button("評価を送信", key="_button"):
+    if st.button("ラベリング結果を表示", key="_button"):
         st.text("ラベリング結果:")
         st.text(
             "\n".join(
