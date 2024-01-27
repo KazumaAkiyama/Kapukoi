@@ -59,6 +59,7 @@ else:
 
             options_bgm = [
                 "",
+                "stop",
                 "seitheme",
                 "akitheme",
                 "suutheme",
@@ -73,7 +74,8 @@ else:
 
             options_back = [
                 "",
-                "stop", 
+                "sky", 
+                "white",
                 "kyousitu_hiru",
                 "kyousitu_yuu",
                 "rouka_hiru",
