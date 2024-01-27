@@ -28,6 +28,10 @@ else:
     for line in st.session_state.text_lines:
         if line:
             st.subheader(line)
+            options_speaker = ["", "syujinkou", "セイ", "アキ", "スウ", "ハマ", "？？？"]
+            selected_option_speaker = st.selectbox(
+                "スピーカー:", options_speaker, key=line + "_speaker"
+            )
             options_char = ["", "syujinkou", "sei", "aki", "su", "hama", "seifes", "sei_out", "aki_out", "su_out", "hama_out", "seifes_out"]
             options_file = [
                 "",
@@ -135,7 +139,7 @@ else:
                 "シーン遷移2:", options_scene2, key=line + "_scene2"
             )
 
-            labeled_text = f"{line},{selected_option_charC},{selected_option_fileC},{selected_option_charL},{selected_option_fileL},{selected_option_charR},{selected_option_fileR},{selected_option_bgm},{selected_option_back},{selected_option_event},{selected_option_scene1}{selected_option_scene2}"
+            labeled_text = f"{line}, {selected_option_speaker}, {selected_option_charC},{selected_option_fileC},{selected_option_charL},{selected_option_fileL},{selected_option_charR},{selected_option_fileR},{selected_option_bgm},{selected_option_back},{selected_option_event},{selected_option_scene1}{selected_option_scene2}"
             st.session_state.labeled_lines.append(labeled_text)
 
     if st.button("ラベリング結果を表示", key="_button"):
