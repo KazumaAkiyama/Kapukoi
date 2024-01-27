@@ -28,19 +28,7 @@ else:
     for line in st.session_state.text_lines:
         if line:
             st.subheader(line)
-            options_charC = ["", "syujinkou", "sei", "aki", "su", "hama", "seifes", "sei_out", "aki_out", "su_out", "hama_out", "seifes_out"]
-            selected_option_charC = st.selectbox(
-                "キャラ_C:", options_charC, key=line + "_charC"
-            )
-            options_charL = ["", "syujinkou", "sei", "aki", "su", "hama", "seifes", "sei_out", "aki_out", "su_out", "hama_out", "seifes_out"]
-            selected_option_charL = st.selectbox(
-                "キャラ_L:", options_charL, key=line + "_charL"
-            )
-            options_charR = ["", "syujinkou", "sei", "aki", "su", "hama", "seifes", "sei_out", "aki_out", "su_out", "hama_out", "seifes_out"]
-            selected_option_charR = st.selectbox(
-                "キャラ_R:", options_charR, key=line + "_charR"
-            )
-
+            options_char = ["", "syujinkou", "sei", "aki", "su", "hama", "seifes", "sei_out", "aki_out", "su_out", "hama_out", "seifes_out"]
             options_file = [
                 "",
                 "_a",
@@ -58,8 +46,26 @@ else:
                 "_di",
                 "_pn",
             ]
-            selected_option_file = st.selectbox(
-                "ファイルタグ:", options_file, key=line + "_file"
+            selected_option_charC = st.selectbox(
+                "キャラ_C:", options_char, key=line + "_charC"
+            )
+           
+            selected_option_fileC = st.selectbox(
+                "ファイルタグ_C:", options_file, key=line + "_file"
+            )
+
+            selected_option_charL = st.selectbox(
+                "キャラ_L:", options_char, key=line + "_charL"
+            )
+            selected_option_fileL = st.selectbox(
+                "ファイルタグ_L:", options_file, key=line + "_file"
+            )
+
+            selected_option_charR = st.selectbox(
+                "キャラ_R:", options_char, key=line + "_charR"
+            )
+            selected_option_fileR = st.selectbox(
+                "ファイルタグ_R:", options_file, key=line + "_file"
             )
 
             options_bgm = [
@@ -129,7 +135,7 @@ else:
                 "シーン遷移2:", options_scene2, key=line + "_scene2"
             )
 
-            labeled_text = f"{line},{selected_option_charC},{selected_option_charL},{selected_option_charR},{selected_option_file},{selected_option_bgm},{selected_option_back},{selected_option_event},{selected_option_scene1}{selected_option_scene2}"
+            labeled_text = f"{line},{selected_option_charC},{selected_option_fileC},{selected_option_charL},{selected_option_fileL},{selected_option_charR},{selected_option_fileR},{selected_option_bgm},{selected_option_back},{selected_option_event},{selected_option_scene1}{selected_option_scene2}"
             st.session_state.labeled_lines.append(labeled_text)
 
     if st.button("ラベリング結果を表示", key="_button"):
